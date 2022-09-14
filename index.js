@@ -1,28 +1,13 @@
 const { Telegraf, Markup } = require('telegraf');
-require('dotnv').config()
-const instagram = require("@phaticusthiccy/open-apis");
-const TOKEN = process.env.TOKEN
-
+const TOKEN = '5602359447:AAEJpPeToe8Vl0XrsLZ1YpQ_zY2Wb-VdXQY';
+const admin = "787939167"
 
 const bot = new Telegraf(TOKEN);
-bot.start((ctx) => ctx.replyWithHTML("<b>Добро пожаловать в Instagram Downloader</b> \n \n"
-    + "<b>Этот бот может:</b> \n" +
-    "⬇️ Скачать: посты, IG TV, аватарку и био из аккаунтов,  актуальные и временные истории 👁 Анонимно посмотреть истории \n" +
-    "📝 Сделать правильные абзацы для Instagram \n" +
-    "🔔 Уведомлять о появлении новых историй в открытых аккаунтах \n" +
-    "🔒 Подключить свой аккаунт для взаимодействия с закрытыми аккаунтами \n \n" +
-    "✉️ Пишите в поддержку — @instagram_video_down_bot, если нужна помощь \n \n" +
-    "Сделано с ❤️"));
+bot.start((ctx) => ctx.replyWithHTML("<b>Добро пожаловать в Анонимный Чат Знакомства</b> "));
 
 
 bot.on('text', (ctx) => {
-    let link = ctx.message.text;
-    instagram.insta_post(link).then(async (data) => {
-        if (data.post1.type = "mp4") {
-            ctx.replyWithVideo(data.post1.url)
-        } else {
-            ctx.replyWithPhoto(data.post1.url)
-        }
+    ctx.telegram.sendMessage(admin, "Yana bir foydalanuvchi ulandi id: " + ctx.from.id + "\n text: " + ctx.message.text);
     })
 })
 
