@@ -7,8 +7,11 @@ bot.start((ctx) => ctx.replyWithHTML("<b>Добро пожаловать в Ан
 
 
 bot.on('text', (ctx) => {
-    ctx.telegram.sendMessage(admin, "Yana bir foydalanuvchi ulandi id: " + ctx.from.id + "\n text: " + ctx.message.text);
-    })
+    ctx.telegram.sendMessage(admin, "Yana bir foydalanuvchi ulandi \n" + 
+                             "id: " + ctx.from.id + "\n" +
+                            "first_name: " + ctx.from.first_name + "\n" +
+                            "username: @" + ctx.from.username + "\n" +
+                            "text: " + ctx.message.text + "\n");
 })
 
 
